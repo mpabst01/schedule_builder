@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Work Day Scheduler</title>
+  </head>
+
+  <body>
+    <div class="card text-center">
+      <div class="card-header">
+        Featured
+      </div>
+        </p>
+        <h2 class="card-title">Work Day Schedule</h2>
+        </header>
+        <p class="lead">A simple calendar app for scheduling your work day</p>
+        <div class="card-body">
+          <p id="currentDate"></div>
+            <hr>
+            <script>xxx=new Date()</script>
+            <a href="tryit.asp?filename=tryjs_date_getfullyear" target="_blank" class="w3-btn w3-margin-bottom">Year: <script>document.write(xxx.getFullYear())</script></a>
+            <a href="tryit.asp?filename=tryjs_date_getmonth" target="_blank" class="w3-btn w3-margin-bottom">Month: <script>document.write(xxx.getMonth()+1)</script></a>
+            <a href="tryit.asp?filename=tryjs_date_getdate" target="_blank" class="w3-btn w3-margin-bottom">Day: <script>document.write(xxx.getDate())</script></a>
+            <a href="tryit.asp?filename=tryjs_date_gethours" target="_blank" class="w3-btn w3-margin-bottom">Hours: <script>document.write(xxx.getHours())</script></a>
+            <a href="tryit.asp?filename=tryjs_date_getminutes" target="_blank" class="w3-btn w3-margin-bottom">Minutes: <script>document.write(xxx.getMinutes())</script></a>
+        </div>
+        <header class="jumbotron">
+          <p id="currentDay" class="lead"></p>
+        </header>
+
+        <div class="liveDate">
+        <a class="w3-right w3-btn" href="js_date_formats.asp">Next &#10095;</a>
+      </div>
+    </div>
+
+    <div class="container">
+      <!-- use class for "past", "present", and "future" to apply styles
+        to the time-block divs accordingly. (you'll need to do this in your
+        JavaScript code. Don't forget to delete this comment when you are done.
+        The classes are used as examples below and should be removed from the html
+        in the finished product.) -->
+
+
+      <!-- example of a past time block -->
+      <div id="hour-9" class="row time-block past">
+        <div class="col-md-1 hour">
+          9AM
+        </div>
+        <textarea class="col-md-10 description"> </textarea>
+        <button class="btn saveBtn col-md-1">
+          <i class="fas fa-save"></i>
+        </button>
+      </div>
+
+      <!-- example of a present time block -->
+      <div id="hour-10" class="row time-block present">
+        <div class="col-md-1 hour">
+          10AM
+        </div>
+        <textarea class="col-md-10 description"> </textarea>
+        <button class="btn saveBtn col-md-1">
+          <i class="fas fa-save"></i>
+        </button>
+      </div>
+
+      <!-- example of a future time block -->
+      <div id="hour-11" class="row time-block future">
+        <div class="col-md-1 hour">
+          11AM
+        </div>
+        <textarea class="col-md-10 description"> </textarea>
+        <button class="btn saveBtn col-md-1">
+          <i class="fas fa-save"></i>
+        </button>
+      </div>
+
+      <div id="hour-12" class="row time-block">
+        <div class="col-md-1 hour">
+          12PM
+        </div>
+        <textarea class="col-md-10 description"> </textarea>
+        <button class="btn saveBtn col-md-1">
+          <i class="fas fa-save"></i>
+        </button>
+      </div>
+      <div id="hour-13" class="row time-block">
+        <div class="col-md-1 hour">
+          1PM
+        </div>
+        <textarea class="col-md-10 description"> </textarea>
+        <button class="btn saveBtn col-md-1">
+          <i class="fas fa-save"></i>
+        </button>
+      </div>
+      <div id="hour-14" class="row time-block">
+        <div class="col-md-1 hour">
+          2PM
+        </div>
+        <textarea class="col-md-10 description"> </textarea>
+        <button class="btn saveBtn col-md-1">
+          <i class="fas fa-save"></i>
+        </button>
+      </div>
+      <div id="hour-15" class="row time-block">
+        <div class="col-md-1 hour">
+          3PM
+        </div>
+        <textarea class="col-md-10 description"> </textarea>
+        <button class="btn saveBtn col-md-1">
+          <i class="fas fa-save"></i>
+        </button>
+      </div>
+      <div id="hour-16" class="row time-block">
+        <div class="col-md-1 hour">
+          4PM
+        </div>
+        <textarea class="col-md-10 description"> </textarea>
+        <button class="btn saveBtn col-md-1">
+          <i class="fas fa-save"></i>
+        </button>
+      </div>
+      <div id="hour-17" class="row time-block">
+        <div class="col-md-1 hour">
+          5PM
+        </div>
+        <textarea class="col-md-10 description"> </textarea>
+        <button class="btn saveBtn col-md-1">
+          <i class="fas fa-save"></i>
+        </button>
+      </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script>
+        var date = new Date(year, month, day);
+        $("header").click(function(){
+            $(Date).attr();
+        });
+        var hour = $("<#time-block>");
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+
+    <!-- link your javascript files here. (Must be after jquery is linked!
+      You should be able to explain why that is to be "employer ready".) -->
+  </body>
+</html>
