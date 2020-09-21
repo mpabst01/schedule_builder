@@ -52,6 +52,8 @@ $(function() {
     $("#hour-17 .description").val(localStorage.getItem("hour-17"));
   
     // display current day on page
+
     $("#currentDay").text(moment().format("dddd, MMMM Do"));
-  });
+});
+
   
