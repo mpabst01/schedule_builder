@@ -24,34 +24,17 @@
   </head>
 
   <body>
-    <div class="card text-center">
-      <div class="card-header">
-        Featured
-      </div>
-        </p>
-        <h2 class="card-title">Work Day Schedule</h2>
-        </header>
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Work Day Scheduler</h1>
         <p class="lead">A simple calendar app for scheduling your work day</p>
-        <div class="card-body">
-          <p id="currentDate"></div>
-            <hr>
-            <script>xxx=new Date()</script>
-            <a href="tryit.asp?filename=tryjs_date_getfullyear" target="_blank" class="w3-btn w3-margin-bottom">Year: <script>document.write(xxx.getFullYear())</script></a>
-            <a href="tryit.asp?filename=tryjs_date_getmonth" target="_blank" class="w3-btn w3-margin-bottom">Month: <script>document.write(xxx.getMonth()+1)</script></a>
-            <a href="tryit.asp?filename=tryjs_date_getdate" target="_blank" class="w3-btn w3-margin-bottom">Day: <script>document.write(xxx.getDate())</script></a>
-            <a href="tryit.asp?filename=tryjs_date_gethours" target="_blank" class="w3-btn w3-margin-bottom">Hours: <script>document.write(xxx.getHours())</script></a>
-            <a href="tryit.asp?filename=tryjs_date_getminutes" target="_blank" class="w3-btn w3-margin-bottom">Minutes: <script>document.write(xxx.getMinutes())</script></a>
-        </div>
-        <header class="jumbotron">
-          <p id="currentDay" class="lead"></p>
-        </header>
-
-        <div class="liveDate">
-        <a class="w3-right w3-btn" href="js_date_formats.asp">Next &#10095;</a>
+        <br>
+        <p class="currentDate">
+          <a id="currentDay" href = test.html></a>
+        </p>
       </div>
     </div>
-
-    <div class="container">
+    <div class="container"></div>
       <!-- use class for "past", "present", and "future" to apply styles
         to the time-block divs accordingly. (you'll need to do this in your
         JavaScript code. Don't forget to delete this comment when you are done.
@@ -149,11 +132,65 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script>
-        var date = new Date(year, month, day);
-        $("header").click(function(){
-            $(Date).attr();
-        });
-        var hour = $("<#time-block>");
+      $(function() {
+  // listen for save button clicks
+  $(".saveBtn").on("click", function() {
+    // get nearby values
+    var value = $(this).siblings(".description").val();
+    var time = $(this).parent().attr("id");
+
+    // save in localStorage
+    localStorage.setItem(time, value);
+  });
+
+  function hourUpdater() {
+    // get current number of hours
+    var currentHour = moment().hours();
+
+    // loop over time blocks
+    $(".time-block").each(function() {
+      // jQuery makes it so that "this" refers to each .time-block
+      // element within the function passed to each
+      var blockHour = parseInt($(this).attr("id").split("-")[1]);
+
+      // check if we've moved past this time
+      if (blockHour < currentHour) {
+        $(this).addClass("past");
+      } 
+      else if (blockHour === currentHour) {
+        $(this).removeClass("past");
+        $(this).addClass("present");
+      } 
+      else {
+        $(this).removeClass("past");
+        $(this).removeClass("present");
+        $(this).addClass("future");
+      }
+    });
+  }
+
+  hourUpdater();
+
+  // set up interval to check if current time needs to be updated
+  setInterval(hourUpdater, 15000);
+
+  // load any saved data from localStorage
+  $("#hour-9 .description").val(localStorage.getItem("hour-9"));
+  $("#hour-10 .description").val(localStorage.getItem("hour-10"));
+  $("#hour-11 .description").val(localStorage.getItem("hour-11"));
+  $("#hour-12 .description").val(localStorage.getItem("hour-12"));
+  $("#hour-13 .description").val(localStorage.getItem("hour-13"));
+  $("#hour-14 .description").val(localStorage.getItem("hour-14"));
+  $("#hour-15 .description").val(localStorage.getItem("hour-15"));
+  $("#hour-16 .description").val(localStorage.getItem("hour-16"));
+  $("#hour-17 .description").val(localStorage.getItem("hour-17"));
+
+  // display current day on page
+  $("#currentDay").text(moment().format("dddd, MMMM Do"));
+});
+
+
+
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
